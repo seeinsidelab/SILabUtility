@@ -129,9 +129,3 @@ Section Uninstall
 
   SetAutoClose true
 SectionEnd
-
-; Git
-!system 'powershell -Command "git remote remove origin"'
-!system 'powershell -Command "git remote add origin https://github.com/seeinsidelab/SILabUtility.git"'
-!system 'powershell -Command "git add ."'
-!system 'powershell -Command "git commit -m "${PRODUCT_NAME}_${PRODUCT_VERSION}_${DATE}.exe"'
