@@ -1,5 +1,4 @@
 @echo off
-powershell -Command "&{ cd /d "D:\SILabUtility\NSIS" }"
 powershell -Command "&{ git remote remove origin }"
 powershell -Command "&{ git remote add origin https://github.com/seeinsidelab/SILabUtility.git }"
 powershell -Command "&{ git add . }"
