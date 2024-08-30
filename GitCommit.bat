@@ -6,3 +6,4 @@ powershell -Command "& {
     git add .
     git commit -m "Update"
 }"'
+pause
