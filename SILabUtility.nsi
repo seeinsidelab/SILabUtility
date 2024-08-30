@@ -3,7 +3,7 @@
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_COMPANY "SEEINSIDE"
 !define PRODUCT_NAME "SILabUtility"
-!define PRODUCT_VERSION ""
+!define PRODUCT_VERSION "Test"
 !define PRODUCT_PUBLISHER "${PRODUCT_COMPANY}, Inc."
 !define PRODUCT_WEB_SITE "https://www.seeinside.co.kr/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\AppMainExe.exe"
@@ -95,7 +95,7 @@ Section "MainSection" SEC01
   ;File /r "${LHLOGIC_PATH}\LearnFile" ; 원소스 LearnFile 폴더의 모든 파일 복사
   
   
-  CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\${PRODUCT_NAME}.exe" ;바로가기 파일 만들기
+  ;CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\${PRODUCT_NAME}.exe" ;바로가기 파일 만들기
 SectionEnd
 
 Section -Post
@@ -129,3 +129,9 @@ Section Uninstall
 
   SetAutoClose true
 SectionEnd
+
+; Git
+!system 'powershell -Command "git remote remove origin"'
+!system 'powershell -Command "git remote add origin https://github.com/seeinsidelab/SILabUtility.git"'
+!system 'powershell -Command "git add ."'
+!system 'powershell -Command "git commit -m "${PRODUCT_NAME}_${PRODUCT_VERSION}_${DATE}.exe"'
