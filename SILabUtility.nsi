@@ -3,7 +3,7 @@
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_COMPANY "SEEINSIDE"
 !define PRODUCT_NAME "SILabUtility"
-!define PRODUCT_VERSION "Test"
+!define PRODUCT_VERSION ""
 !define PRODUCT_PUBLISHER "${PRODUCT_COMPANY}, Inc."
 !define PRODUCT_WEB_SITE "https://www.seeinside.co.kr/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\AppMainExe.exe"
