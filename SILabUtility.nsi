@@ -3,7 +3,7 @@
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_COMPANY "SEEINSIDE"
 !define PRODUCT_NAME "SILabUtility"
-!define PRODUCT_VERSION ""
+;!define PRODUCT_VERSION "20240904"
 !define PRODUCT_PUBLISHER "${PRODUCT_COMPANY}, Inc."
 !define PRODUCT_WEB_SITE "https://www.seeinside.co.kr/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\AppMainExe.exe"
@@ -17,7 +17,7 @@
 
 ; ->현재 날짜 저장
 !system 'powershell -Command "Get-Date -Format yyyyMMdd" > DATE.txt'
-!system 'cmd /c for /f "tokens=*" %A in (DATE.txt) do @echo !define DATE %A > DATE.nsh'
+!system 'cmd /c for /f "tokens=*" %A in (DATE.txt) do @echo !define PRODUCT_VERSION %A > DATE.nsh'
 !include "DATE.nsh"
 
 ; 임시 파일 삭제
@@ -73,7 +73,7 @@ SetCompressor lzma
 ; ->User Add
 Name "${PRODUCT_NAME}"
 Caption "${PRODUCT_NAME} ${PRODUCT_VERSION} Setup"
-OutFile "${PRODUCT_NAME}_${PRODUCT_VERSION}_${DATE}.exe"
+OutFile "${PRODUCT_NAME}_${PRODUCT_VERSION}.exe"
 InstallDir "C:\${PRODUCT_NAME}"
 InstallDirRegKey ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
